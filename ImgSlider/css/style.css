@@ -1,0 +1,122 @@
+body {
+    height: 100vh;
+}
+
+.titleDiv h3 {
+    font-family: Verdana;
+    font-weight: 100;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.wrapper i {
+    top: 31%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.wrapper i:first-child {
+    left: -23px;
+    display: none;
+}
+
+.wrapper i:last-child {
+    right: -23px;
+}
+
+.wrapper .carousel {
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.carousel.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging div {
+    pointer-events: none;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    height: 100%;
+}
+
+.carousel .imgDiv {
+    object-fit: cover;
+    margin: 2px;
+    height: 100%;
+    width: 600px;
+}
+
+.supportDiv {
+    margin-top: 38px;
+    margin-right: 24px;
+}
+
+.supportDiv {
+    width: 400px;
+}
+
+.supportDiv .innerDiv:first-child {
+    margin-left: 48px;
+}
+
+.innerDiv {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.innerDiv h5 {
+    text-align: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.innerDiv p {
+    text-align: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.imgClass {
+    width: 150px;
+    height: 150px;
+}
+
+.carousel .innerDiv:hover {
+    transform: scale(1.01);
+    border: 2px solid #BDBDBD;
+    margin-top: -38px;
+    background-image: url("../images/wheel-bg.jpg");
+}
+
+.carousel .innerDiv:hover .imgClass {
+    width: 248px;
+    height: 248px;
+}
+
+.titleDiv {
+    height: 20vh;
+    padding: 12px;
+}
+
+.contentDiv {
+    height: 80vh;
+}

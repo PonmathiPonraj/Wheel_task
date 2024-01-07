@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="arrow.js"></script></script>
+
+</head>
+<body>
+    <h3>WHEELS</h3>
+    <p><i>Loreum ipsum dolor sit met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquia. Ut enim ad minim veniam, quis nostrud exercitation.</i></p>
+
+    <div id="wheel-container">
+
+        <div class="navigation-buttons">
+            <div class="previous nav-btn"><</div>
+            <div class="next nav-btn">></div>
+        </div>
+
+        <div class="slider-container">
+            <div class="wheels main">
+                <img src="images/wgu.png" alt="wheel 1" style=background:url(./images/wheel-bg.jpg); />
+                <div class="img-txt">
+                    <h4>17 - INCH CAST ALUMINIUM WHEEL, FULLY PAINTED SILVER LITHO</h4>
+                    <p>Standard on Touring FWD</p>
+                    <h5>(WGU)</h5>
+                </div>
+            </div>
+            <div class="wheels">
+                <img src="images/wjr.png" alt="wheel 2" style=background:url(./images/wheel-bg.jpg); />
+                <div class="img-txt">
+                    <h4>17 - INCH CAST ALUMINIUM DIAMOND - CUT WHEEL WITH BALTIC GRAY POCKETS</h4>
+                    <p>Standard on Touring LFWD / Hybrid and Touring Hybrid</p>
+                    <h5>(WJR)</h5>
+                </div>
+            </div>
+            <div class="wheels">
+                <img src="images/wp6.png" alt="wheel 3" style=background:url(./images/wheel-bg.jpg); />
+                <div class="img-txt">
+                    <h4>18 - INCH CAST ALUMINIUM WHEEL WITH FORESHADOW FINISH</h4>
+                    <p>Included with S Appearance Package on Touring Hybrid, Touring L Hybrid and Limited Hybrid</p>
+                    <h5>(WP6)</h5>
+                </div>
+            </div>
+            <div class="wheels">
+                <img src="images/wp6.png" alt="wheel 3" style=background:url(./images/wheel-bg.jpg); />
+                <div class="img-txt">
+                    <h5>(WPF)</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const previous = document.querySelector('.previous');
+        const next = document.querySelector('.next');
+        const images = document.querySelector('.slider-container').children;
+        const totalImages = images.length;
+        let currentIndex = 0;
+
+
+        // Event Listeners to previous and next buttons
+        previous.addEventListener('click', () => {
+            previousImage()
+        })
+
+        next.addEventListener('click', () => {
+            nextImage();
+        })
+
+        // Function to go to next Image
+        function nextImage() {
+
+            images[currentIndex].classList.remove('main');
+            if (currentIndex == totalImages - 1) {
+                currentIndex = 0;
+            }
+            else {
+                currentIndex++;
+            }
+
+            images[currentIndex].classList.add('main');
+
+        }
+
+        // Function to go to previous Image
+        function previousImage() {
+
+            images[currentIndex].classList.remove('main');
+            if (currentIndex == 0) {
+                currentIndex = totalImages - 1;
+            }
+            else {
+                currentIndex--;
+            }
+
+            images[currentIndex].classList.add('main');
+
+        }
+
+    </script>
+
+</body>
+</html>
